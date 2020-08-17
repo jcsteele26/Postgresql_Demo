@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface SongRepository extends JpaRepository<Song, Long> {
 
-    Song findByName(String title);
+   // Song findByName(String title);
     
 } 

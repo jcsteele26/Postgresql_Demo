@@ -13,14 +13,14 @@ public class SongController{
     SongRepository songRepository;
 
     @PostMapping("/post")
-    public void postSong(@RequestBody Song song){
-        songRepository.save(song);
+    public void postSong(@RequestBody Song title){
+        songRepository.save(title);
     }
 
-    @PostMapping("/forcepost")
-    public void forcePostSong(){
-        songRepository.save(new Song("Get Jiggy", "Will Smith", "Get jiggy with it", "Pop"));
-    }
+    //@PostMapping("/forcepost")
+    //public void forcePostSong(){
+    //    songRepository.save(new Song("Get Jiggy", "Will Smith", "Get jiggy with it", "Pop"));
+    //}
 
 
 
@@ -29,10 +29,10 @@ public class SongController{
         return songRepository.findAll();
     }
 
-    @GetMapping("/{name}")
-    public Song getSongByTitle(@PathVariable String title){
-        return songRepository.findByName(title);
-    }
+    //@GetMapping("/{title}")
+    //public Song getNameByTitle(@PathVariable String title){
+    //    return songRepository.findByName(title);
+    //}
 
     @GetMapping("/")
     public String getWelcome(){
